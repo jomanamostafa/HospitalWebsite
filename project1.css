@@ -1,0 +1,68 @@
+/*h1
+{
+color: rgb(76, 99, 214);
+text-align: center;
+font-size: 50px;
+}
+a
+{
+text-decoration: none;
+color: rgb(121, 104, 220);
+}
+a:hover
+{
+text-decoration: underline;
+color: rgb(45, 19, 242);
+}
+h3
+{
+color: rgb(49, 86, 220);
+text-align: center;
+font-weight: 100;
+}
+h4
+{
+color: rgb(29, 15, 135);
+text-align: center;
+font-weight: 800;
+}
+table
+{
+border: 10px outset rgba(20, 26, 205, 0.803);
+width: 30%;
+}
+table td
+{
+background-color: rgb(230, 245, 254);
+padding: 10px;
+border: 1px solid black;
+text-align: center; 
+}
+label{
+    color: rgba(71, 77, 254, 0.853);
+}
+body{
+    background-color: rgba(197, 226, 247, 0.978);
+}
+div , .dashed
+{
+color:rgb(119, 124, 228);
+font-size: medium;
+background-color: rgb(249, 249, 249);
+border-radius: 20px;
+align-self: center;
+border: 2px solid #000;
+box-shadow: 4px 4px  rgba(52, 78, 209, 0.3);
+margin-bottom: 20px;
+}
+.contactimg
+{
+  width: 100%;
+  height: 200px;
+  border-radius: 20px; 
+}
+.imagecampaign{
+display: flex; 
+align-items: center; 
+gap: 15px;  
+}
