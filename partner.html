@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register for organ donation at El Sheikh Zayed Central Hospital. Save lives and contribute to medical excellence.">
+  <meta name="keywords" content="medical center, hospital services, healthcare facility, hospital contact, medical assistance, healthcare partners, hospital volunteer, medical students, organ donation, blood donation, patient care">
   <title>partner</title>
   <link rel="stylesheet" href="stylesheet.css">
+  <script src="form-validation.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="header">
@@ -108,53 +113,91 @@
     </td>
   </tr>
 </table>
-<div class="section">
-  <h1>Partner With Us</h1>
-  <h3>Partnerships help the hospital grow and reach more people. Community impact changes us for the better.</h3>
+<div class="container my-5">
+  <form id="PartnerForm" onsubmit="return validateForm();">
+  <div class="text-center mb-5">
+    <h1 class="fw-bold">Partner With Us</h1>
+    <h3 class="text-muted mt-3">
+      Partnerships help the hospital grow and reach more people.
+      Community impact changes us for the better.
+    </h3>
+  </div>
 
-  <div>
+  <!-- Introduction -->
+  <div class="mb-4">
     <h4>Introduction</h4>
-    Our hospital is built on compassion, care, and community. While we are smaller than many large institutions, our impact grows every day through the generosity and trust of our partners. By joining us, organizations and individuals can play a vital role in improving healthcare access, supporting patient programs, and helping us upgrade our medical facilities. Every partnership helps us reach more people, save more lives, and strengthen our community’s well-being.
+    <p>
+      Our hospital is built on compassion, care, and community. While we are smaller than many large institutions,
+      our impact grows every day through the generosity and trust of our partners. By joining us, organizations and individuals
+      can play a vital role in improving healthcare access, supporting patient programs, and helping us upgrade our medical facilities.
+      Every partnership helps us reach more people, save more lives, and strengthen our community’s well-being.
+    </p>
   </div>
 
-  <div>
+  <!-- Current Partners -->
+  <div class="mb-4">
     <h4>Current Partners</h4>
-    In recent years, we’ve been fortunate to collaborate with amazing partners who share our mission of healing and hope.
-    <ol>
-      <li>City Pharmacy Group; supported our medical equipment drive.</li>
-      <li>Bright Futures Foundation; funded free check-ups for underprivileged families.</li>
-      <li>Healthy Life Foods; sponsored nutrition awareness workshops.</li>
+    <p>
+      In recent years, we’ve been fortunate to collaborate with amazing partners who share our mission of healing and hope.
+    </p>
+
+    <ol class="list-group list-group-numbered mb-3">
+      <li class="list-group-item">City Pharmacy Group; supported our medical equipment drive.</li>
+      <li class="list-group-item">Bright Futures Foundation; funded free check-ups for underprivileged families.</li>
+      <li class="list-group-item">Healthy Life Foods; sponsored nutrition awareness workshops.</li>
     </ol>
-    Their generosity inspires us to continue improving every aspect of patient care. We are proud to work side by side with partners who believe in making healthcare accessible and compassionate for everyone.
+
+    <p>
+      Their generosity inspires us to continue improving every aspect of patient care. We are proud to work side by side
+      with partners who believe in making healthcare accessible and compassionate for everyone.
+    </p>
   </div>
 
-  <div>
+  <!-- Become a Partner -->
+  <div class="mb-5">
     <h4>Become a Partner</h4>
-    We’re always looking to grow our network of supporters and collaborators. Whether you’re a business wanting to give back to the community or an individual hoping to make an impact, your partnership can make a real difference. Together, we can invest in better facilities, modern medical technology, and community outreach programs that bring lasting change.
+    <p>
+      We’re always looking to grow our network of supporters and collaborators. Whether you’re a business wanting to give back
+      to the community or an individual hoping to make an impact, your partnership can make a real difference.
+      Together, we can invest in better facilities, modern medical technology, and community outreach programs that bring lasting change.
+    </p>
   </div>
 
   <hr>
 
-  <form action="" method="get">
-    <label for="Orgnme">Organization name:</label><br>
-    <input type="text" name="Orgnme" placeholder="Enter organization name"><br>
+  <!-- Partnership Form -->
+  <div class="card p-4 mt-4">
+    <h5 class="mb-4">Partnership Application</h5>
 
-    <label for="CP">Contact Person:</label><br>
-    <input type="text" name="CP" placeholder="Enter contact person"><br>
+    <form method="get">
 
-    <label for="PT">Partnership type:</label><br>
-    <input list="partnership" name="PT">
-    <datalist id="partnership">
-      <option value="Sponsorship">
-      <option value="Donation">
-      <option value="Event collaboration">
-    </datalist><br><br>
+      <div class="mb-3">
+        <label for="Orgnme" class="form-label">Organization Name</label>
+        <input type="text" name="Orgnme" id="Orgnme" class="form-control" placeholder="Enter organization name">
+      </div>
 
-    <label for="MB">Message Box:</label><br>
-    <textarea name="MB" rows="10" cols="30" placeholder="Write your message here..."></textarea><br><br>
+      <div class="mb-3">
+        <label for="CP" class="form-label">Contact Person</label>
+        <input type="text" name="CP" id="CP" class="form-control" placeholder="Enter contact person">
+      </div>
 
-    <input type="submit" value="Submit">
-  </form>
+      <div class="mb-3">
+  <label for="PT" class="form-label">Partnership Type</label>
+  <select name="PT" id="PT" class="form-select">
+    <option value="">Select partnership type</option>
+    <option value="Sponsorship">Sponsorship</option>
+    <option value="Donation">Donation</option>
+    <option value="Event collaboration">Event collaboration</option>
+  </select>
+</div>
+      <div class="mb-4">
+        <label for="MB" class="form-label">Message</label>
+        <textarea name="MB" id="MB" class="form-control" rows="5" placeholder="Write your message here..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
 </div>
 </div>
   <div class="section">
@@ -168,4 +211,6 @@
   <p>Contact: +20 2 3850 2523 | Email: info@zayedhospital.eg</p>
 </div>
 </body>
+<script src="form-validation.js"></script>
+
 </html>
