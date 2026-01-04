@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register for organ donation at El Sheikh Zayed Central Hospital. Save lives and contribute to medical excellence.">
+  <meta name="keywords" content="medical center, hospital services, healthcare facility, hospital contact, medical assistance, healthcare partners, hospital volunteer, medical students, organ donation, blood donation, patient care">
+
   <title>Blood Donation</title>
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="stylesheet" href="project1.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body class="board">
 
@@ -33,6 +37,7 @@
     </table>
   </div>
 
+  <!-- Navbar -->
   <table class="menu-table">
     <tr>
       <td>
@@ -55,7 +60,6 @@
           </ul>
         </div>
       </td>
-
       <td>
         <div class="navbar">
           <button onclick="communityMenu.hidden ^= 1">Community & Events ☰</button>
@@ -70,7 +74,6 @@
           </ul>
         </div>
       </td>
-
       <td>
         <div class="navbar">
           <button onclick="supportMenu.hidden ^= 1">Support & Contact ☰</button>
@@ -87,7 +90,6 @@
           </ul>
         </div>
       </td>
-
       <td>
         <div class="navbar">
           <button onclick="careersMenu.hidden ^= 1">Careers & Access ☰</button>
@@ -109,46 +111,103 @@
     </tr>
   </table>
 
-  <div class="section">
-    <h1>Blood Donations</h1>
-    <hr>
-    <h3>Donating blood is a vital act of kindness that can save countless lives. Every drop of donated blood plays an essential role in medical treatments, surgeries, and emergencies, helping patients who suffer from severe injuries, anemia, cancer, or those undergoing major operations. Since blood cannot be manufactured artificially, voluntary donations are the only source to meet the constant demand in hospitals. A single donation can save up to three lives, making it one of the most powerful ways to give back to the community. Beyond saving others, donating blood also benefits the donor by promoting good health through regular check-ups and encouraging the production of new blood cells. It is a simple, safe, and selfless gesture that strengthens the bond of humanity and ensures that life-saving blood is available for those in urgent need.</h3>
+ <body class="board">
+  <div class="container my-4">
+    <h1 class="mb-3">Blood Donation Registration</h1>
+    <br>
+    <p>
+      Blood donation is a vital humanitarian act that helps save lives every day.
+      Donated blood is used in surgeries, emergencies, and treatments for patients
+      who need immediate care. By registering, you are contributing directly to
+      the health and safety of your community.
+    </p>
 
-    <form action="" method="get">
-      <table border="1" width="100%">
-        <tr>
-          <td>First Name</td>
-          <td><input type="text" name="FirstName" placeholder="Enter your Name"></td>
-        </tr>
-        <tr>
-          <td>Family Name</td>
-          <td><input type="text" name="FamilyName" placeholder="Enter your Family Name"></td>
-        </tr>
-        <tr>
-          <td>Telephone Number</td>
-          <td><input type="text" name="TelephoneNumber" placeholder="Enter your Telephone Number"></td>
-        </tr>
-        <tr>
-          <td>Nationalite</td>
-          <td>
-            <select name="Nationalite">
-              <option value="EG">Egypt</option>
-              <option value="MRC">Morocco</option>
-              <option value="ENG">England</option>
-              <option value="BR">Brazil</option>
-              <option value="FR">France</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td>Blood Type</td>
-          <td>
-            <table>
-              <tr><td><input type="checkbox" name="Type O" value="FB"></td><td>Type O</td></tr>
-              <tr><td><input type="checkbox" name="Type A" value="SB"></td><td>Type A</td></tr>
-              <tr><td><input type="checkbox" name="Type B" value="BB"></td><td>Type B</td></tr>
-              <tr><td><input type="checkbox" name="Type AB" value="BB"></td><td>Type AB</td></tr>
-   <div class="section">
+    <form id="bloodDonationForm" onsubmit="return validateForm()">
+
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" id="FirstName" class="form-control">
+        <span class="error" id="errFirstName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="FamilyName" class="form-label">Family Name</label>
+        <input type="text" id="FamilyName" class="form-control">
+        <span class="error" id="errFamilyName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="TelephoneNumber" class="form-label">Telephone Number</label>
+        <input type="text" id="TelephoneNumber" class="form-control">
+        <span class="error" id="errPhone"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="Nationality" class="form-label">Nationality</label>
+        <select id="Nationality" class="form-select">
+          <option value="">Select your country</option>
+          <option value="EG">Egypt</option>
+          <option value="MRC">Morocco</option>
+          <option value="ENG">England</option>
+          <option value="BR">Brazil</option>
+          <option value="FR">France</option>
+        </select>
+        <span class="error" id="errNationality"></span>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Blood Type</label><br>
+        <input type="radio" id="bloodO" name="bloodType"> O
+        <input type="radio" id="bloodA" name="bloodType"> A
+        <input type="radio" id="bloodB" name="bloodType"> B
+        <input type="radio" id="bloodAB" name="bloodType"> AB
+        <span class="error" id="errBlood"></span>
+
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Gender</label><br
+        <input type="radio" id="Female" name="Gender"> Female
+        <input type="radio" id="Male" name="Gender"> Male
+        <span class="error" id="errGender"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="MyDOB" class="form-label">Date of Birth</label>
+        <input type="date" id="MyDOB" class="form-control">
+        <span class="error" id="errDOB"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="ddpref" class="form-label">Preferred Donation Date</label>
+        <input type="date" id="ddpref" class="form-control">
+        <span class="error" id="errPrefDate"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="PersonalIDPic" class="form-label">Upload Personal ID Picture</label>
+        <input type="file" id="PersonalIDPic" class="form-control">
+
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="Consent" class="form-check-input">
+        <span class="error" id="errConsent"></span>
+        <label for="Consent" class="form-check-label">
+          I confirm that I am healthy and willing to donate blood.
+        </label>
+      </div>
+
+      <div class="text-center">
+        <input type="submit" value="Register To Donate" class="btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-secondary"><br>
+        <a href="donate.html">Donations HomePage</a>
+      </div>
+
+    </form>
+  </div>
+</body>
+  <div class="section">
     <a href="ourstory.html" target="_blank" class="button">History</a>
     <a href="HospitalCafeteria.html" target="_blank" class="button">Hospital Cafeteria</a>
     <a href="achivments.html" target="_blank" class="button">Achievements</a>
@@ -156,9 +215,10 @@
 
   <div class="footer">
     <a href="index.html" target="_blank" class="button">Back To Home Page</a>
+    <br><br>
     <p>© 2025 El Sheikh Zayed Central Hospital | Ministry of Health, Egypt</p>
     <p>Contact: +20 2 3850 2523 | Email: info@zayedhospital.eg</p>
   </div>
-
+  <script src="form-validation.js"></script>
 </body>
-</html>         
+</html>
