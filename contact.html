@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register for organ donation at El Sheikh Zayed Central Hospital. Save lives and contribute to medical excellence.">
+  <meta name="keywords" content="medical center, hospital services, healthcare facility, hospital contact, medical assistance, healthcare partners, hospital volunteer, medical students, organ donation, blood donation, patient care">
+
   <title>Contact</title>
   <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 
-<!-- Header -->
 <div class="header">
   <table>
     <tr>
@@ -33,7 +37,6 @@
   </table>
 </div>
 
-<!-- Navigation Menu -->
 <table class="menu-table">
   <tr>
     <td>
@@ -110,55 +113,50 @@
   </tr>
 </table>
 
-<!-- Contact Section -->
-<div class="section">
-  <h1>Contact Us</h1>
-  <h2>Have questions or need help? We would love to hear from you.</h2>
-  <hr>
+<div class="section container my-4">
+  <h1>Zayed Central Hospital</h1>
+  <h2>Contact Us</h2>
 
-  <div class="dashed">
-    <h3>General Information</h3>
-    <p>Location: 1st Neighbourhood, 1st District, El Sheikh Zayed.</p>
-    <p>6th of October, Giza — Beside El Loualoaa Center<br>Phone Number: +202-3850-2523</p>
-  </div>
+ <form id="ContactForm" onsubmit="return validateForm()">
 
-  <div class="section">
-    <h3>Contact Information</h3>
-    <p>Email: AlCentralSheikhZayed@gmail.com</p>
-    <p>Telephone Number: +202-3850-2523</p>
-  </div>
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" id="FirstName" class="form-control">
+        <span class="error" id="errFirstName"></span>
+      </div>
 
-  <form class="login-form" action="" method="get">
-    <table border="1" width="100%">
-      <tr>
-        <td>First Name</td>
-        <td><input type="text" name="FirstName" placeholder="Enter your Name"></td>
-      </tr>
-      <tr>
-        <td>Family Name</td>
-        <td><input type="text" name="FamilyName" placeholder="Enter your Family Name"></td>
-      </tr>
-      <tr>
-        <td>Email</td>
-        <td><input type="email" name="Email" placeholder="Enter your Email"></td>
-      </tr>
-      <tr>
-        <td>Inquiry</td>
-        <td><input type="text" name="Inquiry" placeholder="Enter your Inquiry"></td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center"><input type="submit" value="Send Message"></td>
-      </tr>
-    </table>
+      <div class="mb-3">
+        <label for="FamilyName" class="form-label">Family Name</label>
+        <input type="text" id="FamilyName" class="form-control">
+        <span class="error" id="errFamilyName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="TelephoneNumber" class="form-label">Telephone Number</label>
+        <input type="text" id="TelephoneNumber" class="form-control">
+        <span class="error" id="errPhone"></span>
+
+      </div>
+    <div class="mb-3">
+      <label for="Inquiry" class="form-label">Inquiry</label>
+      <input type="text" id="Inquiry"  class="form-control">
+      <span class="error" id="errInquiry"></span>
+    </div>
+
+    <div class="mb-3 text-center">
+      <input type="submit" value="Send Message" class="btn btn-primary">
+    </div>
+
   </form>
 </div>
-</div>
+
+
   <div class="section">
     <a href="ourstory.html" target="_blank" class="button">History</a>
     <a href="HospitalCafeteria.html" target="_blank" class="button">Hospital Cafeteria</a>
     <a href="achivments.html" target="_blank" class="button">Achievements</a>
   </div>
-<!-- Footer -->
+
 <div class="footer">
   <a href="index.html" target="_blank" class="button">Back To Home Page</a>
   <p>© 2025 El Sheikh Zayed Central Hospital | Ministry of Health, Egypt</p>
@@ -166,4 +164,6 @@
 </div>
 
 </body>
+ <script src="form-validation.js"></script>
+
 </html>
