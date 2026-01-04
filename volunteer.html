@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Register for organ donation at El Sheikh Zayed Central Hospital. Save lives and contribute to medical excellence.">
+  <meta name="keywords" content="medical center, hospital services, healthcare facility, hospital contact, medical assistance, healthcare partners, hospital volunteer, medical students, organ donation, blood donation, patient care">
+
   <title>Volunteer</title>
   <link rel="stylesheet" href="stylesheet.css">
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="header">
@@ -31,7 +37,7 @@
   </div>
  <table class="menu-table">
   <tr>
-    <!-- Medical Services -->
+    
     <td>
       <div class="navbar">
         <button onclick="medicalMenu.hidden ^= 1">Medical Services ☰</button>
@@ -108,60 +114,94 @@
     </td>
   </tr>
 </table>
-<form>
-  <div class="section">
-    <h1>Volunteer With Us – Be a Helping Hand</h1>
-    <hr>
+  <div class="container my-5">
 
-    <div>
-      <h3>Introduction</h3>
-      Volunteers are the heart of our hospital’s mission. They bring comfort, kindness, and support to patients, families, and staff every single day. Whether it’s offering a warm smile, helping organize health events, or assisting our administrative team, every volunteer plays an important role in making our hospital a more caring place.
-    </div>
-
-    <div>
-      <h3>Why Volunteers Matter</h3>
-      As a smaller hospital, we rely on the dedication of our volunteers to help us provide personalized attention and care. Volunteering with us is not just about giving time — it’s about creating connections, spreading hope, and learning valuable skills in a healthcare environment.
-    </div>
-
-    <div>
-      <h3>Ways to Volunteer</h3>
-      <ul>
-        <li>Patient Support: Spend time with patients, offer companionship, and help lift their spirits.</li>
-        <li>Event Assistance: Help organize community health fairs, blood drives, and awareness programs.</li>
-        <li>Administrative Help: Support our staff with simple tasks like greeting visitors or managing information desks.</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Invitation</h3>
-      We welcome anyone with a kind heart and the desire to make a difference. Even a few hours a week can bring comfort and joy to someone in need. Join our volunteer team today and help us continue building a hospital that truly cares.
-    </div>
-
-    <br>
-
-    <div>
-      <h5>Volunteer Registration Form</h5>
-
-      <label for="FullName">Full Name</label><br>
-      <input type="text" id="FullName" name="FullName" placeholder="Enter Full Name"><br><br>
-
-      <label for="Age">Age</label><br>
-      <input type="number" id="Age" name="Age" placeholder="Enter Your Age"><br><br>
-
-      <label for="Availability">Availability</label><br>
-      <input type="date" id="Availability" name="Availability"><br><br>
-
-      <label for="Area">Area of Interest</label><br>
-      <input type="checkbox" id="PatientSupport" name="Interest" value="Patient Support"> Patient Support<br>
-      <input type="checkbox" id="EventAssistance" name="Interest" value="Event Assistance"> Event Assistance<br>
-      <input type="checkbox" id="CommunityOutreach" name="Interest" value="Community Outreach"> Community Outreach<br>
-      <input type="checkbox" id="AdminSupport" name="Interest" value="Administrative Support"> Administrative Support<br>
-      <hr>
-
-      <input type="submit" value="Submit">
-    </div>
+    
+  <div class="text-center mb-4">
+    <h1 class="fw-bold">Volunteer With Us – Be a Helping Hand</h1>
+    <hr class="w-50 mx-auto">
   </div>
-</form>
+  <div class="mb-4">
+    <h3>Introduction</h3>
+    <p>
+      Volunteers are the heart of our hospital’s mission. They bring comfort, kindness, and support to patients,
+      families, and staff every single day. Whether it’s offering a warm smile, helping organize health events,
+      or assisting our administrative team, every volunteer plays an important role in making our hospital a more caring place.
+    </p>
+  </div>
+  <div class="mb-4">
+    <h3>Why Volunteers Matter</h3>
+    <p>
+      As a smaller hospital, we rely on the dedication of our volunteers to help us provide personalized attention and care.
+      Volunteering with us is not just about giving time — it’s about creating connections, spreading hope,
+      and learning valuable skills in a healthcare environment.
+    </p>
+  </div>
+  <div class="mb-4">
+    <h3>Ways to Volunteer</h3>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Patient Support: Spend time with patients, offer companionship, and help lift their spirits.</li>
+      <li class="list-group-item">Event Assistance: Help organize community health fairs, blood drives, and awareness programs.</li>
+      <li class="list-group-item">Administrative Help: Support our staff with simple tasks like greeting visitors or managing information desks.</li>
+    </ul>
+  </div>
+  <div class="mb-5">
+    <h3>Invitation</h3>
+    <p>
+      We welcome anyone with a kind heart and the desire to make a difference.
+      Even a few hours a week can bring comfort and joy to someone in need.
+      Join our volunteer team today and help us continue building a hospital that truly cares.
+    </p>
+  </div>
+  <div class="card p-4">
+    <h5 class="mb-4">Volunteer Registration Form</h5>
+
+    <form id="bloodDonationForm" onsubmit="return validateForm()">
+
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" id="FirstName" class="form-control">
+        <span class="error" id="errFirstName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="FamilyName" class="form-label">Family Name</label>
+        <input type="text" id="FamilyName" class="form-control">
+        <span class="error" id="errFamilyName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="TelephoneNumber" class="form-label">Telephone Number</label>
+        <input type="text" id="TelephoneNumber" class="form-control">
+        <span class="error" id="errPhone"></span>
+      </div>
+     <div class="mb-3">
+        <label for="MyDOB" class="form-label">Date of Birth</label>
+        <input type="date" id="MyDOB" class="form-control">
+        <span class="error" id="errDOB"></span>
+      </div>
+      <div class="mb-3">
+        <label for="Availability" class="form-label">Availability</label>
+        <input type="date" id="Availability" class="form-control">
+        <span class="error" id="errAvailability"></span>
+      </div>
+<div class="mb-3">
+        <label class="form-label">Area of Interest</label><br>
+        <input type="radio" id="PatientSup" name="Interest"> Patient Support <br>
+        <input type="radio" id="EventAssis" name="Interest"> Event Assistance <br>
+        <input type="radio" id="CommOut" name="Interest"> Community Outreach <br>
+        <input type="radio" id="AdminSup" name="Interest"> Administrative Support <br>
+        <span class="error" id="errIntrest"></span>
+      </div>
+      
+       <div class="mb-3">
+        <label for="PersonalIDPic" class="form-label">Upload Personal ID Picture</label>
+        <input type="file" id="PersonalIDPic" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
 </div>
   <div class="section">
     <a href="ourstory.html" target="_blank" class="button">History</a>
@@ -173,5 +213,6 @@
   <p>© 2025 El Sheikh Zayed Central Hospital | Ministry of Health, Egypt</p>
   <p>Contact: +20 2 3850 2523 | Email: info@zayedhospital.eg</p>
 </div>
+<script src="form-validation.js"></script>
 </body>
 </html>
