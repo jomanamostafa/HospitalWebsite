@@ -173,3 +173,24 @@ function validateForm() {
 
     return true; 
 }
+function validateLogin() {
+    var firstName = document.getElementById("FirstName");
+    if (firstName && firstName.value === "") {
+        alert("First Name cannot be empty");
+        return false;
+    }
+
+    var lastName = document.getElementById("LastName");
+    if (lastName && lastName.value === "") {
+        alert("Last Name cannot be empty");
+        return false;
+    }
+
+    var password = document.getElementById("Password");
+    if (password && password.value === "") {
+        alert("Password cannot be empty");
+        return false;
+    }
+
+    return true; 
+}
