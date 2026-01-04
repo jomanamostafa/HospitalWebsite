@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>organ donation</title>
+  <meta name="description" content="Register for organ donation at El Sheikh Zayed Central Hospital. Save lives and contribute to medical excellence.">
+  <meta name="keywords" content="medical center, hospital services, healthcare facility, hospital contact, medical assistance, healthcare partners, hospital volunteer, medical students, organ donation, blood donation, patient care">
+  <title>Organ Donation</title>
   <link rel="stylesheet" href="stylesheet.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 <div class="header">
@@ -16,20 +19,23 @@
     </tr>
     <tr>
         <td><img src="images/ambulancecartoon.gif" height="145px"style="border-radius: 100%;"></td>
-        <td><table>
+        <td>
+          <table>
              <tr>
                  <td colspan="2" align="center"><h1>El Sheikh Zayed Central Hospital</h1></td>
              </tr>
              <tr>
                  <td colspan="2" align="center"><p>Where Compassionate Care Meets Medical Excellence</p></td>
              </tr>
-           </table>
+          </table>
         </td>
         <td><img src="images/hospitalsign.gif" height="145px"style="border-radius: 100%;"></td>
     </tr>
   </table>
-  </div>
- <table class="menu-table">
+</div>
+
+<!-- Navbar -->
+<table class="menu-table">
   <tr>
     <!-- Medical Services -->
     <td>
@@ -86,8 +92,6 @@
         </ul>
       </div>
     </td>
-
-    <!-- Careers & Access -->
     <td>
       <div class="navbar">
         <button onclick="careersMenu.hidden ^= 1">Careers & Access ☰</button>
@@ -108,97 +112,109 @@
     </td>
   </tr>
 </table>
-<div class="section">
-  <h1>Organ Donations</h1>
-  <hr>
-  <h3>
-    Organ donation is one of the most profound gifts a person can offer—it is the gift of life. By choosing to donate organs, a single individual can save or dramatically improve the lives of several people suffering from organ failure or chronic illness. Organs such as the heart, kidneys, liver, lungs, and pancreas can give recipients a second chance at life, allowing them to return to their families, work, and dreams. Organ donation also brings comfort to the donor’s loved ones, knowing that their loss has given hope and healing to others. Sadly, the demand for organs far exceeds the supply, and many patients die each year while waiting for a transplant. Raising awareness and encouraging more people to register as organ donors can bridge this gap. It is a powerful act of compassion and humanity that leaves a lasting legacy of life and love.
-  </h3>
+<body class="board">
+  <div class="container my-4">
+  <h1 class="mb-3">Organ Donation Registration</h1>
+  <br>
+  <p>
+    Organ donation is one of the most profound gifts a person can offer—it is the gift of life...
+  </p>
+  <form id="bloodDonationForm" onsubmit="return validateForm()">
 
-  <form action="" method="get">
-    <table class="section" border="1" width="100%">
-      <tr>
-        <td>First Name</td>
-        <td><input type="text" name="FirstName" placeholder="Enter your Name"></td>
-      </tr>
-      <tr>
-        <td>Family Name</td>
-        <td><input type="text" name="FamilyName" placeholder="Enter your Family Name"></td>
-      </tr>
-      <tr>
-        <td>Telephone Number</td>
-        <td><input type="text" name="TelephoneNumber" placeholder="Enter your Telephone Number"></td>
-      </tr>
-      <tr>
-        <td>Nationalite</td>
-        <td>
-          <select name="Nationalite">
-            <option value="EG">Egypt</option>
-            <option value="MRC">Morocco</option>
-            <option value="ENG">England</option>
-            <option value="BR">Brazil</option>
-            <option value="FR">France</option>
-            
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>Blood Type</td>
-        <td>
-          <table>
-            <tr><td><input type="checkbox" name="Type O" value="FB"></td><td>Type O</td></tr>
-            <tr><td><input type="checkbox" name="Type A" value="SB"></td><td>Type A</td></tr>
-            <tr><td><input type="checkbox" name="Type B" value="BB"></td><td>Type B</td></tr>
-            <tr><td><input type="checkbox" name="Type AB" value="BB"></td><td>Type AB</td></tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>Gender</td>
-        <td>
-          <input type="radio" name="Gender" value="Female"> Female<br>
-          <input type="radio" name="Gender" value="Male"> Male
-        </td>
-      </tr>
-      <tr>
-        <td>Date of Birth</td>
-        <td><input type="date" name="MyDOB"></td>
-      </tr>
-      <tr>
-        <td>Preferred Donation Date</td>
-        <td><input type="date" name="ddpref"></td>
-      </tr>
-      <tr>
-        <td>Upload Personal ID Picture</td>
-        <td><input type="file" name="PersonalIDPic"></td>
-      </tr>
-      <tr>
-        <td>Consent Agreement</td>
-        <td>
-          <input type="checkbox" name="Consent" value="FB">
+      <div class="mb-3">
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" id="FirstName" class="form-control">
+        <span class="error" id="errFirstName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="FamilyName" class="form-label">Family Name</label>
+        <input type="text" id="FamilyName" class="form-control">
+        <span class="error" id="errFamilyName"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="TelephoneNumber" class="form-label">Telephone Number</label>
+        <input type="text" id="TelephoneNumber" class="form-control">
+        <span class="error" id="errPhone"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="Nationality" class="form-label">Nationality</label>
+        <select id="Nationality" class="form-select">
+          <option value="">Select your country</option>
+          <option value="EG">Egypt</option>
+          <option value="MRC">Morocco</option>
+          <option value="ENG">England</option>
+          <option value="BR">Brazil</option>
+          <option value="FR">France</option>
+        </select>
+        <span class="error" id="errNationality"></span>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Blood Type</label><br>
+        <input type="radio" id="bloodO" name="bloodType"> O
+        <input type="radio" id="bloodA" name="bloodType"> A
+        <input type="radio" id="bloodB" name="bloodType"> B
+        <input type="radio" id="bloodAB" name="bloodType"> AB
+        <span class="error" id="errBlood"></span>
+
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Gender</label><br
+        <input type="radio" id="Female" name="Gender"> Female
+        <input type="radio" id="Male" name="Gender"> Male
+        <span class="error" id="errGender"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="MyDOB" class="form-label">Date of Birth</label>
+        <input type="date" id="MyDOB" class="form-control">
+        <span class="error" id="errDOB"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="ddpref" class="form-label">Preferred Donation Date</label>
+        <input type="date" id="ddpref" class="form-control">
+        <span class="error" id="errPrefDate"></span>
+      </div>
+
+      <div class="mb-3">
+        <label for="PersonalIDPic" class="form-label">Upload Personal ID Picture</label>
+        <input type="file" id="PersonalIDPic" class="form-control">
+
+      </div>
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" id="Consent" class="form-check-input">
+        <span class="error" id="errConsent"></span>
+        <label for="Consent" class="form-check-label">
           I confirm that I am healthy and willing to donate an organ.
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" align="center">
-          <input type="submit" value="Register To Donate">
-          <input type="reset" value="Reset"><br>
-          <a href="donate.html">Donations HomePage</a>
-        </td>
-      </tr>
-    </table>
-  </form>
+        </label>
+      </div>
+
+      <div class="text-center">
+        <input type="submit" value="Register To Donate" class="btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-secondary"><br>
+        <a href="donate.html">Donations HomePage</a>
+      </div>
+
+    </form>
 </div>
+
+<div class="section">
+  <a href="ourstory.html" target="_blank" class="button">History</a>
+  <a href="HospitalCafeteria.html" target="_blank" class="button">Hospital Cafeteria</a>
+  <a href="achivments.html" target="_blank" class="button">Achievements</a>
 </div>
-  <div class="section">
-    <a href="ourstory.html" target="_blank" class="button">History</a>
-    <a href="HospitalCafeteria.html" target="_blank" class="button">Hospital Cafeteria</a>
-    <a href="achivments.html" target="_blank" class="button">Achievements</a>
-  </div>
+
 <div class="footer">
   <a href="index.html" target="_blank" class="button">Back To Home Page</a>
   <p>© 2025 El Sheikh Zayed Central Hospital | Ministry of Health, Egypt</p>
   <p>Contact: +20 2 3850 2523 | Email: info@zayedhospital.eg</p>
 </div>
+<script src="form-validation.js"></script>
 </body>
 </html>
