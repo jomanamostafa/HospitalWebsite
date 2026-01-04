@@ -96,3 +96,80 @@ function validateForm() {
 
     return true;
 }
+function validateForm() {
+
+    var firstName = document.getElementById("FirstName");
+    if (firstName && firstName.value === "") {
+        alert("First Name cannot be empty");
+        return false;
+    }
+
+    var familyName = document.getElementById("FamilyName");
+    if (familyName && familyName.value === "") {
+        alert("Family Name cannot be empty");
+        return false;
+    }
+
+    var email = document.getElementById("Email");
+    if (email) {
+        if (email.value === "") {
+            alert("Email cannot be empty");
+            return false;
+        }
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value)) {
+            alert("Please enter a valid email address");
+            return false;
+        }
+    }
+
+    var phone = document.getElementById("TelephoneNumber");
+    if (phone) {
+        if (phone.value === "") {
+            alert("Telephone Number cannot be empty");
+            return false;
+        }
+        if (isNaN(phone.value)) {
+            alert("Telephone Number must contain numbers only");
+            return false;
+        }
+    }
+
+    var department = document.getElementById("Department");
+    if (department && department.value === "") {
+        alert("Please select a Department");
+        return false;
+    }
+
+    var dob = document.getElementById("MyDOB");
+    if (dob && dob.value === "") {
+        alert("Please select your Date of Birth");
+        return false;
+    }
+
+    var startDate = document.getElementById("StartDate");
+    if (startDate && startDate.value === "") {
+        alert("Please select Start Date");
+        return false;
+    }
+
+    var duration = document.getElementById("Duration");
+    if (duration) {
+        if (duration.value === "") {
+            alert("Duration cannot be empty");
+            return false;
+        }
+        if (isNaN(duration.value) || duration.value <= 0) {
+            alert("Duration must be a positive number");
+            return false;
+        }
+    }
+
+    var reason = document.getElementById("Reason");
+    if (reason && reason.value === "") {
+        alert("Please provide a Reason for your application");
+        return false;
+    }
+
+    return true; 
+}
