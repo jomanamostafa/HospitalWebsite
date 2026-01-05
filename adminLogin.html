@@ -127,8 +127,7 @@
 </nav>
 
   
-
-  <form class="login-form" id="adminLoginForm">
+<form class="login-form" id="adminLoginForm" onsubmit="return validateForm('adminLoginForm')">
   <h1 class="form-title">Admin Login</h1>
 
   <div class="form-group">
@@ -152,8 +151,6 @@
     <p>Not an admin? <a href="login.html">User login</a></p>
   </div>
 </form>
-
-
 
    <div class="container text-center mt-5 mb-4">
     <a href="ourstory.html" target="_blank" class="button btn btn-outline-primary m-1">History</a>
