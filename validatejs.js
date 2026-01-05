@@ -137,3 +137,50 @@ function validateLogin() {
 
     return true;
 }
+// ===== Appointment Form Validation =====
+function validateForm() {
+
+    var firstName = document.getElementById("FirstName");
+    if (!firstName || firstName.value.trim() === "") {
+        alert("First Name cannot be empty");
+        return false;
+    }
+
+    var familyName = document.getElementById("FamilyName");
+    if (!familyName || familyName.value.trim() === "") {
+        alert("Family Name cannot be empty");
+        return false;
+    }
+
+    var phone = document.getElementById("TelephoneNumber");
+    if (!phone || phone.value.trim() === "") {
+        alert("Telephone Number cannot be empty");
+        return false;
+    }
+    if (isNaN(phone.value)) {
+        alert("Telephone Number must contain numbers only");
+        return false;
+    }
+
+    var email = document.getElementById("Email");
+    if (!email || email.value.trim() === "") {
+        alert("Email Address cannot be empty");
+        return false;
+    }
+
+    var dob = document.getElementById("MyDOB");
+    if (!dob || dob.value === "") {
+        alert("Please select Date of Birth");
+        return false;
+    }
+
+    var doctor = document.getElementById("Nationality");
+    if (!doctor || doctor.value === "") {
+        alert("Please select a doctor");
+        return false;
+    }
+
+    alert("Appointment submitted successfully!");
+    return true;
+}
+
