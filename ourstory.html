@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,14 +140,13 @@
     <li class="list-group-item">2022 – Introduction of telemedicine services</li>
   </ul>
 
-  <form>
-    <div class="mb-3">
-      <label class="form-label">Share Your Memory:</label>
-      <textarea class="form-control" rows="4" placeholder="Tell us your story..."></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">Submit Memory</button>
-  </form>
-</div>
+  <form action="#" method="POST">
+  <div class="mb-3">
+    <label for="input1" class="form-label">Share Your Memory:</label>
+    <textarea id="input1" name="story" class="form-control" rows="4" placeholder="Tell us your story..."></textarea>
+  </div>
+  <button type="button" class="btn btn-success" onclick="submitStory()">Submit Memory</button>
+</form>
 
  <div class="container text-center mt-5 mb-4">
     <a href="ourstory.html" target="_blank" class="button btn btn-outline-primary m-1">History</a>
