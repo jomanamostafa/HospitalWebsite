@@ -81,3 +81,13 @@ function submitStory() {
     }
     alert("Thank you for sharing your story");
 }
+
+function submitNomination() {
+    var nominationText = document.getElementById("nomination").value;
+    if (nominationText === "") {
+        alert("Please write your nomination before submitting.");
+        return;
+    }
+    alert("Thank you for nominating us!");
+}
+
