@@ -73,3 +73,11 @@ function submitAppointment() {
         alert("Appointment Submitted for " + name);
     }
 }
+function submitStory() {
+    var s=document.getElementById("input1").value;
+    if(s==""){
+        alert("Please write your story before submitting.");
+        return;
+    }
+    alert("Thank you for sharing your story");
+}
