@@ -1,22 +1,19 @@
-ffunction validateForm(formId) {
-    // Only run this for the admin login form
+function validateForm(formId) {
     if (formId === "adminLoginForm") {
         var username = document.getElementById("admin-username").value;
         var password = document.getElementById("admin-password").value;
 
         if (username === "") {
             alert("Please enter a username");
-            return false; // stops form
+            return false; 
         }
 
         if (password === "") {
             alert("Please enter a password");
-            return false; // stops form
+            return false; 
         }
-
-        // All good → redirect to dashboard
         window.location.href = "admin-dashboard.html";
-        return false; // prevents actual form submission
+        return false;
     }
     // First Name
     var firstName = document.getElementById("FirstName");
