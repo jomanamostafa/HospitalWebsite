@@ -1,79 +1,164 @@
-var table, input1, input2, input3, rIndex;
-
+/* =========================
+   GLOBAL ON LOAD
+========================= */
 window.onload = function () {
-    table = document.getElementById("table");
-    input1 = document.getElementById("patientName");
-    input2 = document.getElementById("diagnosis");
-    input3 = document.getElementById("age");
-    selectedRowToInput();
+    initDonations();
+    initUsers();
+    initAppointments();
+};
+
+/* =========================
+   DONATIONS DATABASE
+========================= */
+var donationTable, donorName, donationType, donationValue, dIndex;
+
+function initDonations() {
+    donationTable = document.getElementById("donationTable");
+    donorName = document.getElementById("donorName");
+    donationType = document.getElementById("donationType");
+    donationValue = document.getElementById("donationValue");
+    selectDonationRow();
 }
 
-// check the empty input
-function checkEmptyInput() {
-    var isEmpty = false,
-        patientName = input1.value,
-        diagnosis = input2.value,
-        age = input3.value;
-
-    if (patientName === "") {
-        alert("Patient Name cannot be empty");
-        isEmpty = true;
-    }
-    else if (diagnosis === "") {
-        alert("Diagnosis cannot be empty");
-        isEmpty = true;
-    }
-    else if (age === "") {
-        alert("Age cannot be empty");
-        isEmpty = true;
-    }
-    return isEmpty;
+function donationEmpty() {
+    if (donorName.value === "") { alert("Donor name required"); return true; }
+    if (donationType.value === "") { alert("Donation type required"); return true; }
+    if (donationValue.value === "") { alert("Amount or blood type required"); return true; }
+    return false;
 }
 
-// display selected row data into input text
-function selectedRowToInput() {
-    for (var i = 1; i < table.rows.length; i++) {
-        table.rows[i].onclick = function () {
-            // get the selected row index
-            rIndex = this.rowIndex;
-            input1.value = this.cells[0].innerHTML;
-            input2.value = this.cells[1].innerHTML;
-            input3.value = this.cells[2].innerHTML;
+function selectDonationRow() {
+    for (var i = 1; i < donationTable.rows.length; i++) {
+        donationTable.rows[i].onclick = function () {
+            dIndex = this.rowIndex;
+            donorName.value = this.cells[0].innerHTML;
+            donationType.value = this.cells[1].innerHTML;
+            donationValue.value = this.cells[2].innerHTML;
         };
     }
 }
 
-// add Row
-function addNewRecord() {
-    if (!checkEmptyInput()) {
-        // create a new row and cells
-        var newRow = table.insertRow(table.length),
-            cell1 = newRow.insertCell(0),
-            cell2 = newRow.insertCell(1),
-            cell3 = newRow.insertCell(2);
-
-        // set the values into row cell's
-        cell1.innerHTML = input1.value;
-        cell2.innerHTML = input2.value;
-        cell3.innerHTML = input3.value;
-
-        // call the function to set the event to the new row
-        selectedRowToInput();
+function addDonation() {
+    if (!donationEmpty()) {
+        var row = donationTable.insertRow();
+        row.insertCell(0).innerHTML = donorName.value;
+        row.insertCell(1).innerHTML = donationType.value;
+        row.insertCell(2).innerHTML = donationValue.value;
+        selectDonationRow();
     }
 }
 
-function updateRecord() {
-    if (!checkEmptyInput()) {
-        table.rows[rIndex].cells[0].innerHTML = input1.value;
-        table.rows[rIndex].cells[1].innerHTML = input2.value;
-        table.rows[rIndex].cells[2].innerHTML = input3.value;
+function updateDonation() {
+    donationTable.rows[dIndex].cells[0].innerHTML = donorName.value;
+    donationTable.rows[dIndex].cells[1].innerHTML = donationType.value;
+    donationTable.rows[dIndex].cells[2].innerHTML = donationValue.value;
+}
+
+function deleteDonation() {
+    donationTable.deleteRow(dIndex);
+    donorName.value = donationType.value = donationValue.value = "";
+}
+
+/* =========================
+   USER DATABASE
+========================= */
+var userTable, username, email, role, uIndex;
+
+function initUsers() {
+    userTable = document.getElementById("userTable");
+    username = document.getElementById("username");
+    email = document.getElementById("email");
+    role = document.getElementById("role");
+    selectUserRow();
+}
+
+function userEmpty() {
+    if (username.value === "") { alert("Username required"); return true; }
+    if (email.value === "") { alert("Email required"); return true; }
+    if (role.value === "") { alert("Role required"); return true; }
+    return false;
+}
+
+function selectUserRow() {
+    for (var i = 1; i < userTable.rows.length; i++) {
+        userTable.rows[i].onclick = function () {
+            uIndex = this.rowIndex;
+            username.value = this.cells[0].innerHTML;
+            email.value = this.cells[1].innerHTML;
+            role.value = this.cells[2].innerHTML;
+        };
     }
 }
 
-function deleteRecord() {
-    table.deleteRow(rIndex);
-    // clear input text
-    input1.value = "";
-    input2.value = "";
-    input3.value = "";
+function addUser() {
+    if (!userEmpty()) {
+        var row = userTable.insertRow();
+        row.insertCell(0).innerHTML = username.value;
+        row.insertCell(1).innerHTML = email.value;
+        row.insertCell(2).innerHTML = role.value;
+        selectUserRow();
+    }
+}
+
+function updateUser() {
+    userTable.rows[uIndex].cells[0].innerHTML = username.value;
+    userTable.rows[uIndex].cells[1].innerHTML = email.value;
+    userTable.rows[uIndex].cells[2].innerHTML = role.value;
+}
+
+function deleteUser() {
+    userTable.deleteRow(uIndex);
+    username.value = email.value = role.value = "";
+}
+
+/* =========================
+   APPOINTMENTS DATABASE
+========================= */
+var appointmentTable, patient, department, date, aIndex;
+
+function initAppointments() {
+    appointmentTable = document.getElementById("appointmentTable");
+    patient = document.getElementById("patient");
+    department = document.getElementById("department");
+    date = document.getElementById("date");
+    selectAppointmentRow();
+}
+
+function appointmentEmpty() {
+    if (patient.value === "") { alert("Patient name required"); return true; }
+    if (department.value === "") { alert("Department required"); return true; }
+    if (date.value === "") { alert("Date required"); return true; }
+    return false;
+}
+
+function selectAppointmentRow() {
+    for (var i = 1; i < appointmentTable.rows.length; i++) {
+        appointmentTable.rows[i].onclick = function () {
+            aIndex = this.rowIndex;
+            patient.value = this.cells[0].innerHTML;
+            department.value = this.cells[1].innerHTML;
+            date.value = this.cells[2].innerHTML;
+        };
+    }
+}
+
+function addAppointment() {
+    if (!appointmentEmpty()) {
+        var row = appointmentTable.insertRow();
+        row.insertCell(0).innerHTML = patient.value;
+        row.insertCell(1).innerHTML = department.value;
+        row.insertCell(2).innerHTML = date.value;
+        selectAppointmentRow();
+    }
+}
+
+function updateAppointment() {
+    appointmentTable.rows[aIndex].cells[0].innerHTML = patient.value;
+    appointmentTable.rows[aIndex].cells[1].innerHTML = department.value;
+    appointmentTable.rows[aIndex].cells[2].innerHTML = date.value;
+}
+
+function deleteAppointment() {
+    appointmentTable.deleteRow(aIndex);
+    patient.value = department.value = date.value = "";
 }
