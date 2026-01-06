@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="form-validation.js"></script>
     <link rel="stylesheet" href="stylesheet.css">
+    
 </head>
 
 <body class="bg-light">
@@ -123,40 +124,37 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> 
 <body class="bg-light">
 
 <div class="container mt-4">
 
   <h1 class="mb-4">Appointments Database</h1>
 
-  <table id="table" class="table table-bordered table-striped">
-    <thead class="table-dark">
-      <tr>
-        <th>Patient Name</th>
-        <th>Department</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Ali Hassan</td>
-        <td>Cardiology</td>
-        <td>2025-01-10</td>
-      </tr>
-    </tbody>
-  </table>
+<table id="appointmentTable" class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Patient Name</th>
+      <th>Department</th>
+      <th>Date</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ali Hassan</td>
+      <td>Cardiology</td>
+      <td>2025-01-10</td>
+    </tr>
+  </tbody>
+</table>
 
-  <h3>Appointment Form</h3>
-  <input id="patientName" class="form-control mb-2" placeholder="Patient Name">
-  <input id="diagnosis" class="form-control mb-2" placeholder="Department">
-  <input id="age" class="form-control mb-2" placeholder="Appointment Date">
+<input id="patient" class="form-control mb-2" placeholder="Patient Name">
+<input id="department" class="form-control mb-2" placeholder="Department">
+<input id="date" class="form-control mb-2" placeholder="Appointment Date">
 
-  <button class="btn btn-success" onclick="addNewRecord()">Add</button>
-  <button class="btn btn-warning" onclick="updateRecord()">Edit</button>
-  <button class="btn btn-danger" onclick="deleteRecord()">Delete</button>
-
-</div>
+<button class="btn btn-success" onclick="addAppointment()">Add</button>
+<button class="btn btn-warning" onclick="updateAppointment()">Edit</button>
+<button class="btn btn-danger" onclick="deleteAppointment()">Delete</button></div>
 <div class="container text-center mt-5 mb-4">
     <a href="ourstory.html" target="_blank" class="button btn btn-outline-primary m-1">History</a>
     <a href="HospitalCafeteria.html" target="_blank" class="button btn btn-outline-primary m-1">Hospital Cafeteria</a>
@@ -170,6 +168,6 @@
         <a href="index.html" target="_blank" class="button btn btn-light btn-sm mt-2">Back To Home Page</a>
     </div>
 </div>
-
+<script src="table.js"></script>
 </body>
 </html>
