@@ -90,4 +90,23 @@ function submitNomination() {
     }
     alert("Thank you for nominating us!");
 }
+function validateUserLogin() {
+    var username = document.getElementById("user-username");
+    var password = document.getElementById("user-password");
+
+    if (!username || username.value.trim() === "") {
+        alert("Please enter your username");
+        return false;
+    }
+
+    if (!password || password.value.trim() === "") {
+        alert("Please enter your password");
+        return false;
+    }
+
+    // Successful login → user homepage
+    window.location.href = "index.html";
+    return false; // prevent default submit
+}
+
 
