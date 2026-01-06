@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
             <meta charset="UTF-8">
@@ -124,57 +124,55 @@
             </div>
         </div>
     </nav>
-    <H1>APPOINTMENTS</H1>
+   <h1 class="text-center mb-4">APPOINTMENTS</h1>
 
-        <!-- FORM CONNECTED TO JS -->
-        <form onsubmit="return validateLogin()">
+<form onsubmit="return validateLogin()" class="container p-4 border rounded shadow-sm">
 
-
-        <div class="form-row">
-            <label class="mb-3">First Name</label>
-            <input type="text" id="FirstName">
-        </div>
-
-        <div class="form-row">
-            <label class="mb-3">Family Name</label>
-            <input type="text" id="FamilyName">
-        </div>
-
-        <div class="form-row">
-            <label class="mb-3">Telephone Number</label>
-            <input type="text" id="TelephoneNumber">
-        </div>
-
-        <div class="form-row">
-            <label class="mb-3">Email Address</label>
-            <input type="email">
-        </div>
-
-        <div class="form-row">
-            <label class="mb-3">Date of Birth</label>
-            <input type="date" id="MyDOB">
-        </div>
-
-        <div class="form-row">
-            <label class="mb-3">Select Doctor</label>
-            <select id="Nationality">
-            <option value="">-- Choose a Doctor --</option>
-            <option>Dr.mohamed ezz</option>
-            <option>Dr.moataz ali</option>
-            <option>Dr.nour moataz</option>
-            <option>Dr.khaled amr</option>
-            <option>Dr.mostafa omar</option>
-            <option>Dr.nader abdullah</option>
-            </select>
-        </div>
-
-        <div class="form-buttons">
-            <input type="submit" value="Submit Appointment">
-            <input type="reset" value="Reset">
-        </div>
-
-        </form>
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" id="FirstName" class="form-control">
     </div>
+
+    <div class="mb-3">
+        <label class="form-label">Family Name</label>
+        <input type="text" id="FamilyName" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Telephone Number</label>
+        <input type="text" id="TelephoneNumber" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" id="MyDOB" class="form-control">
+    </div>
+
+    <div class="mb-4">
+        <label class="form-label">Select Doctor</label>
+        <select id="Nationality" class="form-select">
+            <option value="">-- Choose a Doctor --</option>
+            <option>Dr. Mohamed Ezz</option>
+            <option>Dr. Moataz Ali</option>
+            <option>Dr. Nour Moataz</option>
+            <option>Dr. Khaled Amr</option>
+            <option>Dr. Mostafa Omar</option>
+            <option>Dr. Nader Abdullah</option>
+        </select>
+    </div>
+
+    <div class="d-flex gap-3">
+        <input type="submit" value="Submit Appointment" class="btn btn-primary w-100">
+        <input type="reset" value="Reset" class="btn btn-secondary w-100">
+    </div>
+
+</form>
+
 
     <div class="container text-center mt-5 mb-4">
         <a href="ourstory.html" target="_blank" class="button btn btn-outline-primary m-1">History</a>
@@ -184,7 +182,7 @@
     <!-- FOOTER -->
     <div class="footer container-fluid bg-dark text-white mt-4">
         <div class="container text-center py-4">
-            <p class="mb-1">© 2025 El Sheikh Zayed Central Hospital | Ministry of Health, Egypt</p>
+            <p class="mb-1">©️ 2025 El Sheikh Zayed Central Hospital | Ministry of Health, Egypt</p>
             <p class="mb-1">Contact: +20 2 3850 2523 | Email: info@zayedhospital.eg</p>
             <a href="index.html" target="_blank" class="button btn btn-light btn-sm mt-2">Back To Home Page</a>
         </div>
@@ -192,7 +190,7 @@
 
 
     <!-- JS LINK -->
-    <script src="validate.js"></script>
+    <script src="validatejs.js"></script>
 
     </body>
     </html>
