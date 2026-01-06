@@ -127,31 +127,43 @@
     </div>
 </nav>
   <script src="form-validation.js"></script>
-    <form action="index.html" method="get" onsubmit="return validateLogin();">
-  <h1 class="form-title">Login</h1>
+   <form class="login-form" onsubmit="return validateUserLogin();">
+  <h1 class="form-title">User Login</h1>
 
   <div class="form-group">
-    <label for="firstName">Username</label>
-    <input type="text" id="admin-username" name="admin-username" placeholder="Enter  username">
+    <label for="user-username">Username</label>
+    <input
+      type="text"
+      id="user-username"
+      name="user-username"
+      placeholder="Enter username"
+    >
   </div>
 
   <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="admin-password" name="admin-password" placeholder="Enter  password">
+    <label for="user-password">Password</label>
+    <input
+      type="password"
+      id="user-password"
+      name="user-password"
+      placeholder="Enter password"
+    >
   </div>
 
   <div class="form-options">
     <label><input type="checkbox"> Remember me</label>
-    <a href="adminForgotPassword.html">Forgot password?</a>
+    <a href="forgotPassword.html">Forgot password?</a>
   </div>
 
-  <button type="submit" class="submit-btn btn btn-primary w-100">Login</button>
+  <button type="submit" class="submit-btn btn btn-primary w-100">
+    Login
+  </button>
 
   <div class="form-links">
-            <p>Don't have an account? <a href="registerPage.html">Register</a></p>
-            <p>Log in as administrator? <a href="adminLogin.html">Admin login</a></p>
-        </div>
+    <p>Admin? <a href="adminLogin.html">Admin login</a></p>
+  </div>
 </form>
+
 
   <div class="container text-center mt-5 mb-4">
     <a href="ourstory.html" target="_blank" class="button btn btn-outline-primary m-1">History</a>
