@@ -1,10 +1,13 @@
-/* =========================
-   GLOBAL ON LOAD
-========================= */
 window.onload = function () {
-    initDonations();
-    initUsers();
-    initAppointments();
+    if (document.getElementById("donationTable")) {
+        initDonations();
+    }
+    if (document.getElementById("userTable")) {
+        initUsers();
+    }
+    if (document.getElementById("appointmentTable")) {
+        initAppointments();
+    }
 };
 
 /* =========================
