@@ -126,22 +126,33 @@
         </div>
     </div>
 </nav>
-  <div class="card mb-5">
-    <div class="card-body">
-        <h3 class="card-title">Login</h3>
-        <form onsubmit="submitLogin(); return false;">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter your username">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password">
-            </div>
-            <button type="submit" class="btn btn-warning">Login</button>
-        </form>
-    </div>
-</div>
+  <script src="form-validation.js"></script>
+    <form class="login-form" id="adminLoginForm" onsubmit="return validateForm('adminLoginForm')">
+  <h1 class="form-title">Login</h1>
+
+  <div class="form-group">
+    <label for="admin-username">Username</label>
+    <input type="text" id="admin-username" name="admin-username" placeholder="Enter  username">
+  </div>
+
+  <div class="form-group">
+    <label for="admin-password">Password</label>
+    <input type="password" id="admin-password" name="admin-password" placeholder="Enter  password">
+  </div>
+
+  <div class="form-options">
+    <label><input type="checkbox"> Remember me</label>
+    <a href="adminForgotPassword.html">Forgot password?</a>
+  </div>
+
+  <button type="submit" class="submit-btn btn btn-primary w-100">Login</button>
+
+  <div class="form-links">
+            <p>Don't have an account? <a href="registerPage.html">Register</a></p>
+            <p>Log in as administrator? <a href="adminLogin.html">Admin login</a></p>
+        </div>
+</form>
+
   <div class="container text-center mt-5 mb-4">
     <a href="ourstory.html" target="_blank" class="button btn btn-outline-primary m-1">History</a>
     <a href="HospitalCafeteria.html" target="_blank" class="button btn btn-outline-primary m-1">Hospital Cafeteria</a>
